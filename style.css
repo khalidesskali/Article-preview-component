@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --Very-Dark-Grayish-Blue: hsl(217, 19%, 35%);
+  --Desaturated-Dark-Blue: hsl(214, 17%, 51%);
+  --Grayish-Blue: hsl(212, 23%, 69%);
+  --Light-Grayish-Blue: hsl(210, 46%, 95%);
+}
+body {
+  font-family: "Manrope", sans-serif;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--Light-Grayish-Blue);
+}
+.article {
+  display: flex;
+  align-items: center;
+}
+.article .image {
+  width: 290px;
+  overflow: hidden;
+  border-radius: 10px 0 0 10px;
+  height: 290px;
+}
+.article .image img {
+  height: 290px;
+  width: 330px;
+}
+.article .description {
+  padding: 25px 50px;
+  background-color: white;
+  border-radius: 0 10px 10px 0;
+}
+.article .description h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  width: 380px;
+  color: var(--Very-Dark-Grayish-Blue);
+}
+.article .description p {
+  color: var(--Desaturated-Dark-Blue);
+  font-size: 15px;
+  max-width: 400px;
+  margin-bottom: 20px;
+}
+.article .description .info {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  gap: 20px;
+  align-items: center;
+}
+.article .description .info img {
+  width: 60px;
+  border-radius: 50%;
+}
+.article .description .info .name h5 {
+  color: var(--Very-Dark-Grayish-Blue);
+  font-size: 14px;
+  line-height: 1.4;
+}
+.article .description .info .name span {
+  font-size: 14px;
+  color: var(--Desaturated-Dark-Blue);
+}
+.article .description .info > i {
+  justify-self: flex-end;
+  background: var(--Light-Grayish-Blue);
+  border-radius: 50%;
+  padding: 10px;
+  color: var(--Very-Dark-Grayish-Blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+}
+.share {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  right: -60px;
+  padding: 10px 40px;
+  background: var(--Very-Dark-Grayish-Blue);
+  color: white;
+  bottom: 100px;
+  border-radius: 10px;
+}
+.share::after {
+  content: "";
+  position: absolute;
+  border: 15px solid;
+  bottom: -29px;
+  right: 42%;
+  border-color: var(--Very-Dark-Grayish-Blue) transparent transparent
+    transparent;
+}
+.share span {
+  letter-spacing: 5px;
+  color: var(--Grayish-Blue);
+}
+.share i {
+  font-size: 22px;
+  cursor: pointer;
+}
+.hide {
+  opacity: 0;
+}
+.show {
+  opacity: 1;
+}
+@media (max-width: 895px) {
+  .article {
+    flex-direction: column;
+  }
+  .article .description {
+    border-radius: 0 0 10px 10px;
+  }
+  .article .description h2 {
+    font-size: 18px;
+    width: 300px;
+    margin-bottom: 20px;
+  }
+  .article .description p {
+    max-width: 290px;
+  }
+  .article .image {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+  }
+  .article .image img {
+    width: 100%;
+  }
+  .share {
+    bottom: 0;
+    padding: 20px 170px 42px 38px;
+    right: 0;
+    border-radius: 0 0 10px 10px;
+    z-index: 1;
+  }
+  .share::after {
+    display: none;
+  }
+  .article .description .info > i {
+    z-index: 2;
+  }
+}
